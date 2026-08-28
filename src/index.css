@@ -1,0 +1,27 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --bg-desktop: #020617;
+    --accent: #4f46e5;
+  }
+
+  [data-theme='cyberdeck'] {
+    --bg-desktop: #110023;
+    --accent: #ff00ff;
+  }
+
+  [data-theme='retro-matrix'] {
+    --bg-desktop: #000a00;
+    --accent: #00ff00;
+  }
+}
+
+html, body, #root {
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  box-sizing: border-box;
+}
