@@ -1,32 +1,113 @@
-# React + TypeScript + Vite
+# ChahethOS
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+ChahethOS is an interactive portfolio presented as a browser-based desktop operating system. Open applications from the Start Menu, desktop shortcuts, or taskbar, then move, focus, minimize, maximize, and close each window like a lightweight desktop environment.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- Terminal with portfolio and window-launch commands
+- Projects showcase with technology tags and repository links
+- About, Settings, System Monitor, and Monaco-powered README Editor apps
+- Desktop shortcuts, Start Menu, taskbar app switching, and live clock
+- Draggable, minimizable, maximizable, closable, focusable windows with z-index management
+- Selectable themes: Minimal Dark, Cyberdeck, and Retro Matrix
+- Selectable desktop wallpapers
+- Responsive React UI styled with Tailwind CSS v4
 
-## React Compiler
+## Tech Stack
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- React 19 and TypeScript
+- Vite
+- Tailwind CSS v4 with `@tailwindcss/vite`
+- Zustand for desktop and window state
+- Framer Motion for window dragging
+- Monaco Editor for the code editor app
+- Lucide React for icons
+- Oxlint for linting
 
-## Expanding the Oxlint configuration
+## Getting Started
 
-If you are developing a production application, we recommend enabling type-aware lint rules by installing `oxlint-tsgolint` and editing `.oxlintrc.json`:
+### Requirements
 
-```json
-{
-  "$schema": "./node_modules/oxlint/configuration_schema.json",
-  "plugins": ["react", "typescript", "oxc"],
-  "options": {
-    "typeAware": true
-  },
-  "rules": {
-    "react/rules-of-hooks": "error",
-    "react/only-export-components": ["warn", { "allowConstantExport": true }]
-  }
-}
+- Node.js 20 or newer
+- npm
+
+### Installation
+
+```bash
+git clone https://github.com/Chahethsen12/chaheth-os.git
+cd chaheth-os
+npm install
 ```
 
-See the [Oxlint rules documentation](https://oxc.rs/docs/guide/usage/linter/rules) for the full list of rules and categories.
+### Development
+
+Start the Vite development server:
+
+```bash
+npm run dev
+```
+
+Open the local URL printed by Vite, usually `http://localhost:5173`.
+
+### Production Build
+
+Run the type-safe production build:
+
+```bash
+npm run build
+```
+
+Preview the generated build locally:
+
+```bash
+npm run preview
+```
+
+Run the linter:
+
+```bash
+npm run lint
+```
+
+## Project Structure
+
+```text
+src/
+|-- apps/                 # Application windows
+|-- components/
+|   |-- desktop/          # Wallpaper and desktop shortcuts
+|   |-- taskbar/          # Taskbar and Start Menu
+|   `-- window/           # Reusable draggable window frame
+|-- config/               # Portfolio content
+|-- store/                # Zustand window and system state
+|-- App.tsx               # Desktop shell and app routing
+|-- App.css               # Application styles
+`-- index.css             # Tailwind entry point and theme variables
+```
+
+## Terminal Commands
+
+Open the Terminal app and try:
+
+```text
+help
+about
+projects
+gui-about
+gui-projects
+clear
+```
+
+## Customization
+
+Update portfolio content in `src/config/portfolioData.ts`. Themes, wallpapers, window metadata, and application IDs are defined around `src/store/useWindowStore.ts` and `src/index.css`.
+
+## License
+
+ChahethOS is released under the [MIT License](LICENSE).
+
+## Author
+
+Hapugala Arachchige Chaheth Janidu Senevirathne
+
+- GitHub: [@Chahethsen12](https://github.com/Chahethsen12)
